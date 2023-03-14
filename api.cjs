@@ -15,6 +15,7 @@ const gptconfig = new Configuration({
 const openAiConfig = new OpenAIApi(gptconfig);
 
 
+
 // View Engine
 app.engine('hbs', handleBars.engine({ extname: ".hbs"}));
 app.set('view engine', 'hbs');
@@ -38,8 +39,9 @@ app.post('/', async (req, res) => {
         messages: [{ role: "user", content: q}]
     });
     const message = completion.data.choices[0].message;
-    console.log(message);
-    res.render('index', { message })
+    console.log(message.content)
+    res.render('index', { message });
+
 })
 
 
