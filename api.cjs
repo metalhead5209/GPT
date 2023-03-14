@@ -18,9 +18,11 @@ const openAiConfig = new OpenAIApi(gptconfig);
 
 
 // SERPApi Configuration
+const KEY = process.env.SERP_KEY;
 const SerpApi = require('google-search-results-nodejs');
-const search = new SerpApi.GoogleSearch(key);
+const search = new SerpApi.GoogleSearch(KEY);
 const imgDB = [];
+
 
 // View Engine
 app.engine('hbs', handleBars.engine({ extname: ".hbs" }));
@@ -59,7 +61,7 @@ app.post('/api', (req, res) => {
         star: 1,
         num: 1,
     };
-    console.lof(req.body.results[0].name)
+    console.log(req.body.results[0].name)
     const callback = (data) => {
         const IMAGE = {
             id: Math.floor(Math.random() * 200) + 1,
