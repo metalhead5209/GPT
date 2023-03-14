@@ -1,7 +1,7 @@
 const express = require('express');
 const handleBars = require('express-handlebars');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const { Configuration, OpenAIApi } = require('openai');
 const app = express();
 
@@ -9,7 +9,7 @@ const app = express();
 const KEY = process.env.API_KEY;
 const ORG = process.env.ORG
 const gptconfig = new Configuration({
-    apiKey: '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',
+    apiKey: KEY,
     organization: ORG
 });
 const openAiConfig = new OpenAIApi(gptconfig);
