@@ -3,10 +3,16 @@ const handleBars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const app = express();
 
+
+// View Engine
 app.engine('hbs', handleBars.engine({ extname: ".hbs"}));
 app.set('view engine', 'hbs');
 
+
+// Middleware
 app.use(express.static('public'));
+app.use(express.json());
+
 
 
 app.get('/', (req, res) => {
