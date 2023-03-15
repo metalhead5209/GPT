@@ -40,6 +40,11 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.get('/char', (req, res) => {
+    res.render('char', { imgDB })
+})
+
+
 app.post('/', async (req, res) => {
     const q = req.body.q;
     const completion = await openAiConfig.createChatCompletion({
@@ -52,7 +57,7 @@ app.post('/', async (req, res) => {
 
 });
 
-app.post('/api', (req, res) => {
+app.post('/char', (req, res) => {
     const params = {
         q: `${req.body.results[0].name} toy`,
         tbm: "isch",
@@ -69,6 +74,7 @@ app.post('/api', (req, res) => {
         };
         console.log(IMAGE);
         imgDB.push(IMAGE);
+        console.log(imgDB)
     };
     search.json(params, callback);
     res.json({

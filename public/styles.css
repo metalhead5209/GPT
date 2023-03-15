@@ -1,35 +1,41 @@
 body {
-    background-color: rgb(33, 33, 33);
-    color:azure;
-    /* margin: auto 5em */
+  background-color: rgb(33, 33, 33);
+  color: azure;
+  /* margin: auto 5em */
 }
 
 #main {
-    width: auto;
-    margin: auto 15em;
-    text-align: center;
+  width: auto;
+  margin: auto 5em;
+  text-align: center;
+}
+
+#swchar {
+  width: auto;
+  margin: auto 5em;
+  text-align: center;
 }
 
 #input {
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    resize: vertical
-   
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  resize: vertical
 }
 
-#imgs {
-    width: 10em;
-    height: 12em;
-    margin: 10px;
-  }
-  
-  #img-div {
-    width: 10px;
-    display: inline;
-    overflow: normal;
-  }
-  
-  label {
-    color: white;
-  }
+.imgs {
+  width: 13em;
+  height: 12em;
+  margin: 10px;
+}
+
+#img-div {
+  width: 10px;
+  display: inline;
+  overflow: normal;
+}
+
+
+label {
+  color: white;
+}

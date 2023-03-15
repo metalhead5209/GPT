@@ -1,0 +1,15 @@
+<div id="swchar">
+   <h1>Search For Star Wars Character</h1>
+      <label>Name:<input type='text' class='input'></label>
+      <button id="btn">Send Data</button>
+  
+    <div>
+      <div id="img-div">
+      {{#each imgDB}}
+
+        <img class="imgs" src={{this.url}}>      
+
+      {{/each}}
+
+      </div>
+</div>

@@ -10,7 +10,7 @@ const charSearch = async (char) => {
         .then(async (data) => {
             console.log(data.results[0].name)
             let obj = data;
-            await fetch('/api', {
+            await fetch('/char', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -23,7 +23,7 @@ const charSearch = async (char) => {
             if(data) {
                 setTimeout(() => {
                     location.reload();
-                }, 3000);
+                }, 1500);
             }
         });
         } catch (error) {
