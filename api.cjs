@@ -59,7 +59,7 @@ app.post('/', async (req, res) => {
 
 app.post('/char', (req, res) => {
     const params = {
-        q: `${req.body.results[0].name} toy`,
+        q: `${req.body.results[0].name} action figure`,
         tbm: "isch",
         ijn: 0,
         safe: "active",
@@ -72,7 +72,6 @@ app.post('/char', (req, res) => {
             id: Math.floor(Math.random() * 200) + 1,
             url: data["images_results"][Math.floor(Math.random() * 20)]["original"],
         };
-        console.log(IMAGE);
         imgDB.push(IMAGE);
         console.log(imgDB)
     };

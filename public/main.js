@@ -19,11 +19,11 @@ const charSearch = async (char) => {
             })
             .then((r) => r.json())
             .then((res) => console.log(res));
-            console.log(obj);
+            console.log(obj.results[0]);
             if(data) {
                 setTimeout(() => {
                     location.reload();
-                }, 1500);
+                }, 2000);
             }
         });
         } catch (error) {
