@@ -9,22 +9,22 @@ const charSearch = async (char) => {
         .then((res) => res.json())
         .then(async (data) => {
             console.log(data.results[0].name)
-            let obj = data;
+            // let obj = data;
             await fetch('/char', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
                 },
-                body: JSON.stringify(obj),
+                body: JSON.stringify(data),
             })
-            .then((r) => r.json())
-            .then((res) => console.log(res));
-            console.log(obj.results[0]);
-            if(data) {
-                setTimeout(() => {
-                    location.reload();
-                }, 2000);
-            }
+            // .then((r) => r.json())
+            // .then((res) => console.log(res));
+            console.log(data.results[0]);
+            // if(data) {
+            //     setTimeout(() => {
+            //         location.reload();
+            //     }, 2000);
+            // }
         });
         } catch (error) {
             console.error(error, "I find your lack of star wars knowledge disturbing");

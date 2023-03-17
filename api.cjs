@@ -58,8 +58,9 @@ app.post('/', async (req, res) => {
 });
 
 app.post('/char', (req, res) => {
+    const schar = req.body.results[0];
     const params = {
-        q: `${req.body.results[0].name} action figure`,
+        q: `${schar.name} action figure`,
         tbm: "isch",
         ijn: 0,
         safe: "active",
@@ -73,7 +74,8 @@ app.post('/char', (req, res) => {
             url: data["images_results"][Math.floor(Math.random() * 20)]["original"],
         };
         imgDB.push(IMAGE);
-        console.log(imgDB)
+        console.log(schar)
+        console.log(imgDB);
     };
     search.json(params, callback);
     res.json({
